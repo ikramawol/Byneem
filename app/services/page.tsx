@@ -139,7 +139,7 @@ export default function Services() {
                       <Image
                         src={service.image}
                         alt={`${service.title} illustration`}
-                        width={500}
+                        width={400}
                         height={350}
                         className="w-full h-full object-cover animate-slide-up hover:scale-105 transition-smooth"
                         priority={index === 0}
