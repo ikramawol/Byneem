@@ -44,8 +44,12 @@ export function ContactForm() {
       })
 
       if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.error || 'Failed to send message')
+        const contentType = response.headers.get('content-type') || ''
+        if (contentType.includes('application/json')) {
+          const errorData = await response.json()
+          throw new Error(errorData.error || 'Failed to send message')
+        }
+        throw new Error('Failed to send message. Please try again in a moment.')
       }
 
       setSubmitMessage({

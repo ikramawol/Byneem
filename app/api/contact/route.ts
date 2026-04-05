@@ -26,7 +26,6 @@ const contactSchema = z.object({
   message: z.string().min(10, 'Message must be at least 10 characters'),
 })
 
-/** Shown in the UI; details stay in server logs only. */
 const publicEmailFailureMessage =
   "We couldn't send your message from this form. Please try again later or email hello@byneem.com directly."
 
@@ -34,7 +33,6 @@ export async function POST(request: Request) {
   try {
     const body = await request.json()
 
-    // Validate input
     const validatedData = contactSchema.parse(body)
 
     const resend = getResendClient()
