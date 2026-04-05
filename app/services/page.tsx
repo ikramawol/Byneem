@@ -133,8 +133,8 @@ export default function Services() {
                 </div>
 
                 {/* Visual */}
-                <div className="w-full min-w-0">
-                  <div className="bg-secondary border border-border rounded-lg overflow-hidden h-44 sm:h-56 md:h-64 lg:h-72 w-full flex items-center justify-center">
+                <div className="w-full min-w-0 md:flex md:justify-center">
+                  <div className="bg-secondary border border-border rounded-lg overflow-hidden h-44 sm:h-56 md:h-64 lg:h-72 w-full md:max-w-[26rem] lg:max-w-[28rem] flex items-center justify-center">
                     {service.image ? (
                       <Image
                         src={service.image}
